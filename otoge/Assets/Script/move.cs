@@ -22,8 +22,6 @@ public class move : MonoBehaviour
         {
            if(Input.GetKeyDown(KeyCode.Space))
                 Destroy(this.gameObject);
-            
-            
         }
     }
 

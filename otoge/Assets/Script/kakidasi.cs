@@ -18,8 +18,8 @@ public class kakidasi : MonoBehaviour
         note = new GameObject[Script.GetComponent<Haiti>().masu_y+1, Script.GetComponent<Haiti>().masu_x];
         //取得したxyと同じサイズの配列
 
-        sw1 = new StreamWriter(Application.dataPath+"/mitame.csv", false);
-        sw2 = new StreamWriter(Application.dataPath + "/"+filename+".csv", false);
+        sw1 = new StreamWriter(Application.dataPath+"/Score/mitame.csv", false);
+        sw2 = new StreamWriter(Application.dataPath + "/Score/"+filename+".csv", false);
         //Assetsの中にtamesi.csvを作る trueなら追記
         
         string[] s1 = { "x", "y", "aaa" };
@@ -34,7 +34,7 @@ public class kakidasi : MonoBehaviour
         string s2 = string.Join(",", s1);
 
         sw1.Write(s1);
-     
+    
         
         //sw.WriteLine(s2);
     }
