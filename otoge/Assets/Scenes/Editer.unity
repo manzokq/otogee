@@ -349,9 +349,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a52163a8b02b57408ae3e7a377a4322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masu_y: 70
   masu_x: 4
-  sikaku: {fileID: 3804626799333946372, guid: 00b06e1e448dae4439b701eb448501fc, type: 3}
+  masu_y: 10
+  ScoreEdit: {fileID: 4900000, guid: 6026514ccd51dd347acae21a8495682f, type: 3}
+  square: {fileID: 3804626799333946372, guid: 00b06e1e448dae4439b701eb448501fc, type: 3}
 --- !u!4 &1132302734
 Transform:
   m_ObjectHideFlags: 0
@@ -379,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Script: {fileID: 1132302732}
-  filename: kaidan
+  filename: a
 --- !u!1 &1968366371
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +415,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD:otoge/Assets/Scenes/SampleScene.unity
   m_AnchoredPosition: {x: -527.99994, y: 360.35004}
+=======
+  m_AnchoredPosition: {x: -556, y: 461}
+>>>>>>> origin/kasai:otoge/Assets/Scenes/Editer.unity
   m_SizeDelta: {x: 160, y: 29.06}
   m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!114 &1968366373
@@ -450,7 +455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u4FDD\u5B58:Z"
+  m_Text: "\u4FDD\u5B58:S"
 --- !u!222 &1968366374
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -19,6 +19,11 @@ public class Read : MonoBehaviour
     public void yomitori()
     {
         sr = new StreamReader(Application.dataPath+"/Score/"+filename+".csv");
+<<<<<<< HEAD
+=======
+        while(!sr.EndOfStream)
+        {//ÅŒã‚Ü‚ÅŒJ‚è•Ô‚·
+>>>>>>> origin/kasai
 
             Debug.Log("aaa");
         //if(!sr.EndOfStream)    
@@ -33,10 +38,7 @@ public class Read : MonoBehaviour
             string textline = sr.ReadLine();
 
             string[] a = textline.Split(',');
-            for (int i = 0; i < a.Length; i++)
-            {
-                Debug.Log(a[i]);
-            }
+            
             if(int.Parse(a[2])==0)
             Instantiate(notes,
             new Vector2(float.Parse(a[1])+4, float.Parse(a[0])+4), 
