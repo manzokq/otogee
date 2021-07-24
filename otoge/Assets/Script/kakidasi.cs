@@ -11,11 +11,12 @@ public class kakidasi : MonoBehaviour
     //private GameObject[,] sort; 
     [SerializeField] private GameObject Script=null;//xy取得用
     //int Count=0;
-    public string filename;
+    public static string FileName = null;
+    public string filename = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+        filename = FileName;
         //sw.WriteLine(s2);
     }
 
@@ -100,10 +101,13 @@ public class kakidasi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            filename = FileName;
+        }
 
-
-        //Debug.Log("nu");
-        if (Input.GetKeyDown(KeyCode.S))
+            //Debug.Log("nu");
+            if (Input.GetKeyDown(KeyCode.S))
         {
             //保存時にファイルネームを書き込みたい
             note = new GameObject[Script.GetComponent<Haiti>().masu_y + 1, Script.GetComponent<Haiti>().masu_x];

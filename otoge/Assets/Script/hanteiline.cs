@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,33 +7,38 @@ public class hanteiline : MonoBehaviour
 {
 
     bool f1,f2,f3,f4 = false;
-    bool hureteru = false;
+    //bool hureteru = false;
 
+    void Start()
+    {
+        KeyConfig.Config["key1"] = KeyCode.D;
+        KeyConfig.Config["key2"] = KeyCode.F;
+        KeyConfig.Config["key3"] = KeyCode.J;
+        KeyConfig.Config["key4"] = KeyCode.K;
+    }
 
     public float judge = 0;
     public float  aaa= 0;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        //ÉLÅ[ê›íËÇé©óRÇ…Ç¢Ç∂ÇÍÇÈÇÊÇ§Ç…ÇµÇΩÇ¢ÇÊ
+        if (KeyConfig.GetKeyDown("key1"))
         {
             StartCoroutine(Kesu(1));
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (KeyConfig.GetKeyDown("key2"))
         {
             StartCoroutine(Kesu(2));
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (KeyConfig.GetKeyDown("key3"))
         {
             StartCoroutine(Kesu(3));
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (KeyConfig.GetKeyDown("key4"))
         {
             StartCoroutine(Kesu(4));
         }

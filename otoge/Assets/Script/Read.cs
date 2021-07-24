@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Read : MonoBehaviour
 {
     private StreamReader sr;
-    public string filename;
+    //public string filename;
+    public TextAsset filename=null;
     [SerializeField] private GameObject notes;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class Read : MonoBehaviour
 
     public void yomitori()
     {
-        sr = new StreamReader(Application.dataPath+"/Score/"+filename+".csv");
+        sr = new StreamReader(Application.dataPath + "/Score/" +filename.name+".csv");
         while(!sr.EndOfStream)
         {//ç≈å„Ç‹Ç≈åJÇËï‘Ç∑
 
