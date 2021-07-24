@@ -22,7 +22,7 @@ public class Haiti : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log(ScoreEdit.name);
+        
         //マスの指定した分ノーツエディターのシーンを生成する
         if (ScoreEdit == null)
         {
