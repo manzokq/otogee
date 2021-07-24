@@ -6,25 +6,16 @@ using System.Text;
 public class kakidasi : MonoBehaviour
 {
 
-    private StreamWriter sw1,sw2;//ストリームライター使う宣言
+    public static StreamWriter sw1,sw2;//ストリームライター使う宣言
     private GameObject[,] note;//書き出す用の配列
-    private GameObject[,] sort; 
-    [SerializeField] private GameObject Script;//xy取得用
-    int Count=0;
+    //private GameObject[,] sort; 
+    [SerializeField] private GameObject Script=null;//xy取得用
+    //int Count=0;
     public string filename;
     // Start is called before the first frame update
     void Start()
     {
-        note = new GameObject[Script.GetComponent<Haiti>().masu_y+1, Script.GetComponent<Haiti>().masu_x];
-        //取得したxyと同じサイズの配列
-
-        sw1 = new StreamWriter(Application.dataPath+"/mitame.csv", false);
-        sw2 = new StreamWriter(Application.dataPath + "/"+filename+".csv", false);
-        //Assetsの中にtamesi.csvを作る trueなら追記
         
-        string[] s1 = { "x", "y", "aaa" };
-
-        string s2 = string.Join(",", s1);
         //sw.WriteLine(s2);
     }
 
@@ -49,13 +40,10 @@ public class kakidasi : MonoBehaviour
     }
     private void Sort()
     {
-        //Debug.Log("nu");
-
-
         GameObject[] a = GameObject.FindGameObjectsWithTag("notes");
         Debug.Log(a.Length);
 
-        for (int i = 0; i < a.Length - 1; i++)
+        for (int i = 0; i < a.Length; ++i)
         {
             note[(int)a[i].transform.position.y, (int)a[i].transform.position.x] = a[i];
             //ざっくりいうと整理
@@ -115,8 +103,19 @@ public class kakidasi : MonoBehaviour
 
 
         //Debug.Log("nu");
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.S))
         {
+            //保存時にファイルネームを書き込みたい
+            note = new GameObject[Script.GetComponent<Haiti>().masu_y + 1, Script.GetComponent<Haiti>().masu_x];
+            //取得したxyと同じサイズの配列
+
+            sw1 = new StreamWriter(Application.dataPath + "/Score/mitame.csv", false);
+            sw2 = new StreamWriter(Application.dataPath + "/Score/" + filename + ".csv", false);
+            //Assetsの中にtamesi.csvを作る trueなら追記
+
+            string[] s1 = { "x", "y", "aaa" };
+
+            string s2 = string.Join(",", s1);
 
             Sort();
             Mitame();

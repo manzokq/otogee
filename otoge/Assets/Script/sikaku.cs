@@ -16,7 +16,14 @@ public class sikaku : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GetComponent<Renderer>().material.color.g==0)
+        {
+            f = false;
+        }
+        else if(GetComponent<Renderer>().material.color.g==1)
+        {
+            f = true;
+        }
     }
 
     private void OnMouseDown()
@@ -25,8 +32,6 @@ public class sikaku : MonoBehaviour
         GetComponent<Renderer>().material.color = new Color32(255, 0, 0,255);
         else if(!f)
         GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);
-
-        f ^= true;
 
 
         //Debug.Log(transform.position.y);

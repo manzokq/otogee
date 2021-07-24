@@ -6,6 +6,7 @@ public class move : MonoBehaviour
 {
     public float BPM;
     float pos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,13 @@ public class move : MonoBehaviour
         gameObject.transform.Translate(0, -0.02f*BPM/15, 0);
         pos = this.transform.position.y;
 
-        if(pos<=0&&pos>=-5)
-        {
-           if(Input.GetKeyDown(KeyCode.Space))
-                Destroy(this.gameObject);
+        //if(pos<=0&&pos>=-5)
+        //{
+        //   if(Input.GetKeyDown(KeyCode.Space))
+        //        Destroy(this.gameObject);
             
             
-        }
+        //}
     }
 
 
