@@ -26,11 +26,11 @@ public class Haiti : MonoBehaviour
         //マスの指定した分ノーツエディターのシーンを生成する
         if (ScoreEdit == null)
         {
-            Generate();
+            Create();
         }
         else
         {
-            Reading();
+            Edit();
         }
         
 
@@ -52,19 +52,20 @@ public class Haiti : MonoBehaviour
             //エディターの再生成
             if (ScoreEdit == null)
             {
-                Generate();
+                Create();
             }
             else
             {
                 
-                Reading();
+                Edit();
             }
         }
     }
 
     //譜面新規作成
-    public void Generate()
+    public void Create()
     {
+        kakidasi.FileName = null;
         masu = new int[masu_y, masu_x];
         for (int i = 0; i < masu.GetLength(0); i++)
         {
@@ -76,7 +77,7 @@ public class Haiti : MonoBehaviour
     }
 
     //譜面の編集
-    public void Reading()
+    public void Edit()
     {
         //代入された譜面を呼び出す
         sr = new StreamReader(Application.dataPath + "/Score/" + ScoreEdit.name+".csv");
@@ -107,6 +108,9 @@ public class Haiti : MonoBehaviour
             }
                         
         }
+        //名前を呼び出して上書き保存ができるようにしたいよ
+        kakidasi.FileName = ScoreEdit.name;
+
         CountX++;
         masu_y = CountY/CountX;
         masu_x = CountX;
